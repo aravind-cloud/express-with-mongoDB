@@ -6,4 +6,3 @@
 # 4. Authentication of API invocation / Passport middleware useage
 # 5. Config layer for different running env
 # 6. ES6 standards
-
