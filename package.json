@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "node server --exec babel-node --presets babel-preset-env",
+    "dev": "nodemon server --exec babel-node --presets babel-preset-env"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,10 @@
     "mongoose": "^5.6.6"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
     "nodemon": "^1.19.1"
   }
 }

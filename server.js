@@ -1,12 +1,12 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const productRouter = require("./routes/products");
+import express from "express";
+import { connect } from "mongoose";
+import { urlencoded, json } from "body-parser";
+import productRouter from "./routes/products";
 
 const app = express();
 const PORT = process.env.PORT || 6600;
 
-mongoose.connect(
+connect(
   "mongodb://127.0.0.1:27017/express",
   { useNewUrlParser: true },
   err => {
@@ -15,10 +15,10 @@ mongoose.connect(
   }
 );
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(urlencoded({ extended: false }));
 
 // parse application/json
-app.use(bodyParser.json());
+app.use(json());
 
 app.use("/api/products", productRouter);
 
